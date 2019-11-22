@@ -36,9 +36,9 @@ public class Main {
         double importeFM;
 
         //Constantes
-        final int DiasLimit = 30;
-        final double ImporteM = 60;
-        final double PorcentajeD = 20;
+        final int DIAS_LIMITE = 30;
+        final double IMPORTE = 60;
+        final double PORCENTAJE = 20;
 
         //Mensaje de inicio
         System.out.printf("Alternativa de Multa %n====================%n");
@@ -47,16 +47,16 @@ public class Main {
             diasDemora = SCN.nextInt();
             System.out.println("---");
 
-            System.out.printf(Locale.ENGLISH, "Importe inicial multa ....: %.2f €%n", ImporteM);
+            System.out.printf(Locale.ENGLISH, "Importe inicial multa ....: %.2f €%n", IMPORTE);
             System.out.println("---");
 
-            System.out.printf("Plazo con descuento ......: %d días%n", DiasLimit);
-            System.out.printf(Locale.ENGLISH, "Tanto descuento ..........: %d %%%n", (int) PorcentajeD);
+            System.out.printf("Plazo con descuento ......: %d días%n", DIAS_LIMITE);
+            System.out.printf(Locale.ENGLISH, "Tanto descuento ..........: %d %%%n", (int) PORCENTAJE);
 
-            if (diasDemora <= DiasLimit) {
-                descuentoImp = ImporteM * (PorcentajeD / 100);
+            if (diasDemora <= DIAS_LIMITE) {
+                descuentoImp = IMPORTE * (PORCENTAJE / 100);
             }
-            if (diasDemora >= DiasLimit) {
+            if (diasDemora >= DIAS_LIMITE) {
                 descuentoImp = 0;
             } else {
                 System.out.println("ERROR: Entrada incorrecta");
@@ -65,7 +65,7 @@ public class Main {
             System.out.printf(Locale.ENGLISH, "Importe descuento ........: %.0f €%n", descuentoImp);
             System.out.println("---");
 
-            importeFM = ImporteM - descuentoImp;
+            importeFM = IMPORTE - descuentoImp;
             System.out.printf(Locale.ENGLISH, "Importe final multa ......: %.2f €%n", importeFM);
 
         } catch (Exception e) {
